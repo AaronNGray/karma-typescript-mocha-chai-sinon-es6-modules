@@ -41,6 +41,10 @@ dependencies in package.json use minimum version
 ## baseline
 dependencies in package.json use exact version number as the last working version
 
+## BUGS
+
+Subject to :- https://github.com/karma-runner/karma/issues/2474#issuecomment-572173673
+
 ## LICENSE
 
 ISC License
