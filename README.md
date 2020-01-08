@@ -1,10 +1,18 @@
-# karma-typescript-mocha-chai-quickstart
+# karma-typescript-mocha-chai-sinon-es6-modules
 
- > A boilerplate dev environment for typescript, mocha & chai and karma for unit testing (tdd/bdd)
+ > A boilerplate dev environment for typescript, mocha, chai and sinon for karma unit testing (tdd/bdd)
 
 The node.js development environment has been set-up as a working example for writing and evaluating mocha & chai unit tests.
  
 The purpose is to have the SAME mocha &amp; chai unit tests written in typescript or javascript using import ES6/ES2015 modules (e.g. common.js/node.js/webpack)  AND then have those unit tests evaluated on the server side (node.js) and client side (via the Chrome browser) automatically by the Karma test runner.
+
+## Install
+
+`npm install`
+
+## Test
+
+`npm test`
 
 ## node.js libraries used
   - @types/chai
@@ -19,8 +27,10 @@ The purpose is to have the SAME mocha &amp; chai unit tests written in typescrip
   - karma-typescript
   - karma-typescript-es6-transform
   - karma-typescript-preprocessor
+  - karma-sinon
   - karma-webpack
   - mocha
+  - sinon
   - standard
   - typescript
   - webpack
