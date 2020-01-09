@@ -4,7 +4,14 @@
   "description": "A boilerplate dev environment for typescript, mocha, chai, and sinon for karma unit testing (tdd/bdd)",
   "main": "",
   "scripts": {
-    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
+    "test": "karma start --single-run --browsers ChromeHeadless,FirefoxHeadless karma.conf.js",
+    "test:chrome": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
+    "test:chromeHeaded": "karma start --browsers Chrome karma.conf.js",
+    "test:firefox": "karma start --single-run --browsers FirefoxHeadless karma.conf.js",
+    "test:edge": "karma start --single-run --browsers Edge karma.conf.js",
+    "test:ie": "karma start --browsers IE karma.ie.conf.js",
+    "test:safari": "karma start --single-run --browsers Safari karma.conf.js",
+    "test:watch": "karma watch --browsers Chrome karma.conf.js"
   },
   "author": "AaronNGray",
   "license": "ISC",
@@ -17,6 +24,7 @@
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.3.0",
     "karma-mocha": "^1.3.0",
     "karma-mocha-reporter": "^2.2.3",
     "karma-sinon": "^1.0.5",

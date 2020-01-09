@@ -13,6 +13,7 @@ module.exports = function (config) {
       'karma-chai',
       'karma-typescript',
       'karma-chrome-launcher',
+      'karma-firefox-launcher',
       'karma-typescript-preprocessor',
       'karma-coverage',
       'karma-typescript-es6-transform'
@@ -54,12 +55,12 @@ module.exports = function (config) {
       // options passed to the typescript compiler
       options: {
         sourceMap: false, // (optional) Generates corresponding .map file.
-        target: 'ES2015', // (optional) Specify ECMAScript target version: 'ES3' (default), or 'ES5'
-        module: 'commonjs', // (optional) Specify module code generation: 'commonjs' or 'amd'
-        noImplicitAny: true, // (optional) Warn on expressions and declarations with an implied 'any' type.
-        noResolve: true, // (optional) Skip resolution and preprocessing.
-        removeComments: true, // (optional) Do not emit comments to output.
-        concatenateOutput: false, // (optional) Concatenate and emit output to single file. By default true if module option is omited, otherwise false.
+        "target": "ESNEXT",                  // Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'.
+        "module": "ESNext",                  // Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
+        noImplicitAny: true,                 // (optional) Warn on expressions and declarations with an implied 'any' type.
+        noResolve: true,                     // (optional) Skip resolution and preprocessing.
+        removeComments: true,                // (optional) Do not emit comments to output.
+        concatenateOutput: false,            // (optional) Concatenate and emit output to single file. By default true if module option is omited, otherwise false.
         /* Strict Type-Checking Options */
         strict: true,                        /* Enable all strict type-checking options. */
         strictNullChecks: true,              /* Enable strict null checks. */
@@ -101,7 +102,17 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless', 'Firefox', 'FirefoxDeveloper', 'FirefoxNightly', 'IE'],
+    customLaunchers: {
+        FirefoxHeadless: {
+            base: 'Firefox',
+            flags: ['-headless'],
+        },
+        ChromeHeadlessES6: {
+            base: 'ChromeHeadless',
+            flags: [''],
+        }
+    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
